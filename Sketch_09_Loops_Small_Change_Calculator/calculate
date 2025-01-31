@@ -1,0 +1,20 @@
+void calculateChange(float amount) {
+  int cents = int(amount * 100); // Convert amount to cents
+  int[] coins = {200, 100, 50, 20, 10, 5, 2, 1}; // Available coins in cents
+  
+  println("You owe Omid " + amount + " Euro. Omid receives:");
+
+  for (int coin : coins) {
+    int count = cents / coin;
+    cents %= coin;
+    
+    if (count > 0) {
+      println(count + " × " + coin / 100.0 + "€ coin");
+    }
+  }
+}
+
+void setup() {
+  calculateChange(23);
+}
++

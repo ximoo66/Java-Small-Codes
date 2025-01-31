@@ -1,0 +1,36 @@
+char[] keyPressedArray = new char[5];  // Array to store key-presses
+
+void setup() {
+  size(400, 200);
+  textSize(24);
+  textAlign(LEFT);
+}
+
+void draw() {
+  background(255);
+  displayKeyPresses();
+}
+
+void keyPressed() {
+  storeKeyPress(key);
+}
+
+void storeKeyPress(char key) {
+  // Shift existing elements to the left
+  for (int i = 0; i < keyPressedArray.length - 1; i++) {
+    keyPressedArray[i] = keyPressedArray[i + 1];
+  }
+
+  // Add the new key-press at the end
+  keyPressedArray[keyPressedArray.length - 1] = key;
+}
+
+void displayKeyPresses() {
+  fill(0);
+  text("Key-presses:", 20, height / 2 - 20);
+
+  // Display the key-presses
+  for (int i = 0; i < keyPressedArray.length; i++) {
+    text(keyPressedArray[i], 20 + i * 30, height / 2);
+  }
+}

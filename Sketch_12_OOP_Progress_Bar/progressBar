@@ -1,0 +1,44 @@
+class ProgressBar {
+  float currentValue;
+  float maxValue;
+  int width;
+  int x, y;
+
+  ProgressBar(float currentValue, float maxValue, int width, int x, int y) {
+    this.currentValue = currentValue;
+    this.maxValue = maxValue;
+    this.width = width;
+    this.x = x;
+    this.y = y;
+  }
+
+  void calculateProgress() {
+    float progress = (currentValue / maxValue) * width;
+    fill(0, 255, 0);  // Green color for progress
+    rect(x, y, progress, 20);
+    fill(255);  // Reset fill to white
+  }
+
+  void draw() {
+    // Draw the background of the progress bar
+    fill(150);
+    rect(x, y, width, 20);
+
+    // Draw the progress bar
+    calculateProgress();
+  }
+}
+
+void setup() {
+  size(400, 200);
+
+  // Example usage
+  ProgressBar progressBar1 = new ProgressBar(50, 100, 200, 50, 50);
+  ProgressBar progressBar2 = new ProgressBar(75, 100, 150, 50, 100);
+  ProgressBar progressBar3 = new ProgressBar(30, 50, 100, 50, 150);
+
+  // Draw the progress bars
+  progressBar1.draw();
+  progressBar2.draw();
+  progressBar3.draw();
+}

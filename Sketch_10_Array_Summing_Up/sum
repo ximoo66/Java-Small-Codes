@@ -1,0 +1,47 @@
+int[] numbers = {40725, 53065, 98639, 27840, 58423, 71241, 27552, 70030, 52443, 50984, 19382, 32599, 73839, 79033, 71437, 80106, 25240, 34866, 10771, 31812};
+
+void setup() {
+  size(400, 200);
+  textSize(20);
+  textAlign(CENTER, CENTER);
+
+  int sum = calculateSum(numbers);
+  int smallest = findSmallest(numbers);
+  int largest = findLargest(numbers);
+
+  text("Sum of numbers: " + sum, width / 2, height / 2 - 30);
+  text("Smallest number: " + smallest, width / 2, height / 2);
+  text("Largest number: " + largest, width / 2, height / 2 + 30);
+}
+
+void draw() {
+  // Empty draw function
+}
+
+int calculateSum(int[] arr) {
+  int sum = 0;
+  for (int i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+int findSmallest(int[] arr) {
+  int smallest = arr[0];
+  for (int i = 1; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+  return smallest;
+}
+
+int findLargest(int[] arr) {
+  int largest = arr[0];
+  for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  return largest;
+}

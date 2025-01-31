@@ -1,0 +1,26 @@
+void setup() {
+  size(400, 400);
+  background(255);  // Set background color to white
+  stroke(0);        // Set stroke color to black
+}
+
+void draw() {
+  drawGraphPaper();
+  noLoop();  // Stop draw loop after one iteration
+}
+
+void drawGraphPaper() {
+  float spacing = 20;  // Adjust spacing as needed
+  
+  // Draw horizontal lines
+  for (float y = 0; y <= height; y += spacing) {
+    line(0, y, width, y);
+  }
+
+  // Draw vertical lines using a while loop
+  float x = 0;
+  while (x <= width) {
+    line(x, 0, x, height);
+    x += spacing;
+  }
+}

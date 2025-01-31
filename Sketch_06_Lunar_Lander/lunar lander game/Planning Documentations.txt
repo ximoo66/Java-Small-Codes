@@ -1,0 +1,61 @@
+1. Screen Setup and Basic UI:
+
+    Implemented an introductory screen and a game screen.
+    Added basic UI elements, including level, score, and time displays.
+
+2. Start Button and User Interaction:
+
+    Created a start button with corresponding mouse click functionality.
+
+3. Lunar Lander and Basic Movement:
+
+    Designed the Lunar Lander shape.
+    Introduced gravitational effects and basic movement functions.
+
+4. Landing Spot UI and Collision Logic:
+
+    Implemented landing spot UI elements.
+    Defined variables for crashing and landing.
+    Established collision logic with the landing platform.
+
+5. Thrust and Fuel UI:
+
+    Incorporated thrust and fuel UI elements.
+    Developed logic for fuel consumption during thrusting.
+    Implemented controls for stopping thrusting when fuel is depleted.
+
+6. Time-Related UI Elements:
+
+    Added time-related UI elements to display the time remaining.
+    Implemented a countdown timer for each level.
+
+7. Level Progression and Scoring:
+
+    Enabled progression to the next level after a successful landing.
+    Adjusted difficulty by increasing speed and level with each successful landing.
+  
+
+8. UI Feedback and Sound:
+
+    Provided visual and audio feedback for successful landings and crashes.
+    Incorporated sound effects for thrusting, successful landings, and crashes.
+
+9. Background and How to Play UI:
+
+    Designed a background with stars.
+    Added UI elements for explaining how to play the game.
+
+10. Optimization and Testing:
+
+    Optimized code for better performance.
+    Conducted thorough testing.
+
+11. User Interface Improvements:
+
+    Enhanced the appearance of the Start button.
+    Included instructions on the intro screen for controls and gameplay.
+
+12. Documentation and Comments:
+
+    Documented the code for better understanding.
+    Added comments.

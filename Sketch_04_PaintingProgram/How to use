@@ -1,0 +1,23 @@
+# Paint App
+
+
+## How to Use
+1. **Selecting Tools:**
+   - Press '1' for the brush tool.
+   - Press '2' for the line tool.
+   - Press '3' for the circle tool.
+
+2. **Choosing Colors:**
+   - Click on a color in the palette on the right side of the canvas to select it.
+
+3. **Drawing:**
+   - Use the mouse to draw on the canvas.
+   - Drag the mouse to draw lines or circles, depending on the selected tool.
+
+4. **Adjusting Brush Size:**
+   - Press '[' to decrease the brush size.
+   - Press ']' to increase the brush size.
+
+5. **Clearing Canvas:**
+   - Press 'C' to clear the canvas.
+

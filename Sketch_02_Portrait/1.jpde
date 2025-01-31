@@ -1,0 +1,56 @@
+float eyeOpenness = 1.0; // Variable to control eye openness (1.0 is fully open, 0.0 is fully closed)
+
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255); // Set background color to white
+
+  // Draw face
+  fill(255, 220, 185); // Set skin color
+  ellipse(200, 200, 180, 220); // Draw face ellipse
+
+  // Draw eyes with pupils following the mouse pointer
+  drawEye(160, 180, mouseX, mouseY);
+  drawEye(240, 180, mouseX, mouseY);
+
+  // Draw nose
+  drawNose(200, 220);
+
+  // Draw mouth
+  drawMouth(200, 240);
+}
+
+// Function to draw an eye at a specified location (x, y)
+void drawEye(float x, float y, float targetX, float targetY) {
+  fill(255); // White of the eye
+  ellipse(x, y, 30, 20);
+
+  // Calculate the position of the pupil based on the mouse position using sin and cos
+  float angle = atan2(targetY - y, targetX - x);
+  float pupilX = x + cos(angle) * 5 * eyeOpenness;
+  float pupilY = y + sin(angle) * 5 * eyeOpenness;
+
+  fill(0); // Pupil
+  ellipse(pupilX, pupilY, 10, 10);
+}
+
+// Function to draw a nose at a specified location (x, y)
+void drawNose(float x, float y) {
+  fill(255, 150, 150); // Set nose color
+  beginShape();
+  vertex(x, y);
+  vertex(x - 10, y + 20);
+  vertex(x + 10, y + 20);
+  endShape(CLOSE); // Close the shape for a filled nose
+}
+
+// Function to draw a mouth at a specified location (x, y)
+void drawMouth(float x, float y) {
+  fill(255, 0, 0); // Set mouth color
+  beginShape();
+  vertex(x - 20, y);
+  bezierVertex(x - 10, y + 20, x + 10, y + 20, x + 20, y);
+  endShape(); // End the shape for a filled mouth
+}

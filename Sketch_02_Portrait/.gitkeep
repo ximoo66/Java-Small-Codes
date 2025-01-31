@@ -1,0 +1,46 @@
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+
+  // Draw face
+  fill(255, 220, 185); // Skin color
+  ellipse(200, 200, 180, 220);
+
+  // Draw eyes
+  drawEye(160, 180);
+  drawEye(240, 180);
+
+  // Draw nose
+  drawNose(200, 220);
+
+  // Draw mouth
+  drawMouth(200, 240);
+}
+
+void drawEye(float x, float y) {
+  fill(255); // White of the eye
+  ellipse(x, y, 30, 20);
+
+  fill(0); // Pupil
+  ellipse(x, y, 10, 10);
+}
+
+void drawNose(float x, float y) {
+  fill(255, 150, 150); // Nose color
+  beginShape();
+  vertex(x, y);
+  vertex(x - 10, y + 20);
+  vertex(x + 10, y + 20);
+  endShape(CLOSE);
+}
+
+void drawMouth(float x, float y) {
+  fill(255, 0, 0); // Mouth color
+  beginShape();
+  vertex(x - 20, y);
+  bezierVertex(x - 10, y + 20, x + 10, y + 20, x + 20, y);
+  endShape();
+}

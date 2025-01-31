@@ -1,0 +1,25 @@
+void setup() {
+  size(400, 400);
+  background(255);  // Set background color to white
+  drawChessboard();
+}
+
+void drawChessboard() {
+  float cellSize = width / 8.0;
+  
+  for (int row = 0; row < 8; row++) {
+    for (int col = 0; col < 8; col++) {
+      float x = col * cellSize;
+      float y = row * cellSize;
+      
+      // Alternate colors for each square
+      if ((row + col) % 2 == 0) {
+        fill(255);  // White squares
+      } else { 
+        fill(0);    // Black squares
+      }
+      
+      rect(x, y, cellSize, cellSize);
+    }
+  }
+}

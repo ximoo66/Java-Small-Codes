@@ -1,0 +1,37 @@
+String[] quotes = {
+  "Just keep swimming.",
+  "I'm the king of the world!",
+  "You had me at hello.",
+  "To infinity and beyond!",
+  "Nobody puts Baby in a corner.",
+  "Inconceivable!",
+  "Roads? Where we're going we don't need roads.",
+  "I'll be back.",
+  "Toto, I've a feeling we're not in Kansas anymore."
+};
+
+void setup() {
+  size(400, 200);
+  background(0);  // Set the background to black
+
+  // Reverse the array manually
+  int start = 0;
+  int end = quotes.length - 1;
+
+  while (start < end) {
+    // Swap elements at start and end indices
+    String temp = quotes[start];
+    quotes[start] = quotes[end];
+    quotes[end] = temp;
+
+    // Move towards the center
+    start++;
+    end--;
+  }
+
+  // Display the reversed array
+  fill(255);  // Set text color to white
+  for (int i = 0; i < quotes.length; i++) {
+    text(quotes[i], 20, 20 + i * 20);
+  }
+}
